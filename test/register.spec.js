@@ -18,7 +18,7 @@ describe("Register POST /v1/auth/register", () => {
         });
         it("New Email should return status code 201 and return accessToken", (done) => {
             const newAccount = {
-                name: "alex",
+                name: "Alex",
                 email: "alex@binar.co.id",
                 password: "123456",
             };
@@ -27,9 +27,9 @@ describe("Register POST /v1/auth/register", () => {
                 .post("/v1/auth/register")
                 .set("Content-Type", "application/json")
                 .send({
-                    name: newAccount.name,
-                    email: newAccount.email,
-                    password: newAccount.password,
+                    name: "Alex",
+                    email: "alex@binar.co.id",
+                    password: "123456",
                 })
                 .expect(201)
                 .then((res) => {

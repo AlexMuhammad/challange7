@@ -5,7 +5,6 @@ const app = express();
 const router = require("../app/router");
 const { WrongPasswordError, EmailNotRegisteredError } = require("../app/errors");
 
-// jest.setTimeout(20000);
 jest.useFakeTimers('legacy')
 app.use(express.json());
 router.apply(app);
@@ -14,7 +13,7 @@ describe("Login POST /v1/auth/login", () => {
     describe("Login Successfull", () => {
         it("Login success should return status code 201 and return accessToken", (done) => {
             const validAccount = {
-                email: "alex@binar.co.id",
+                email: "fikri@binar.co.id",
                 password: "123456",
             };
 
@@ -64,7 +63,7 @@ describe("Login POST /v1/auth/login", () => {
 
         it("Wrong password should return status code 401 and return error WrongPasswordError", (done) => {
             const wrongPasswordAccount = {
-                email: "alex@binar.co.id",
+                email: "fikri@binar.co.id",
                 password: "wrongpassword123",
             };
 

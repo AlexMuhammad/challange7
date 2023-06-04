@@ -3,7 +3,6 @@ const request = require("supertest");
 
 const app = express()
 const router = require("../app/router");
-const { InsufficientAccessError } = require("../app/errors");
 const jwt = require("jsonwebtoken");
 
 jest.useFakeTimers('legacy')
